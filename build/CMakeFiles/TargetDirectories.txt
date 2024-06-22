@@ -1,0 +1,3 @@
+/mnt/e/Code/Homework/build/CMakeFiles/main.dir
+/mnt/e/Code/Homework/build/CMakeFiles/edit_cache.dir
+/mnt/e/Code/Homework/build/CMakeFiles/rebuild_cache.dir

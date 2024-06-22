@@ -3,21 +3,20 @@
 
 #include"DoubleLinkedList.hpp"
 #include"TimeTable.h"
+#include<map>
+#include<string>
 
 class ClassRommBase{
     protected:
-        int _type,_number,_size;
-        DoubleLinkedList<TimeTable> booklist;
+        map<string,string> _attribute;
+        DoubleLinkedList<TimeTable> _booklist;
     public:
-        
-        void set__type(const int &_type) {
-            this->_type = _type; 
+        ClassRommBase(){};
+        void addnewattribute(string k1,string k2){
+            _attribute[k1]=k2;
         }
-        void set__number(const int &_number) {
-            this->_number = _number; 
-        }
-        void set__size(const int &_size) {
-            this->_size = _size;       
+        void eraseattribute(string k1){
+            _attribute.erase(k1);
         }
 }; 
 

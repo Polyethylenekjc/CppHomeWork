@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/main.dir/mnt/e/Code/Homework/inc/test.cpp.o CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o -o /mnt/e/Code/Homework/inc/main 

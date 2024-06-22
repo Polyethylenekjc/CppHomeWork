@@ -65,10 +65,11 @@ class DoubleLinkedList{
         int getLen();
         void show();
         bool push_back(const T &elem);
-        T operator[](int idx);
+        T& operator[](int idx);
         iterator begin();
         iterator end();
         iterator search(T target);
+        void resize(int num);
         bool orderinsert(const T& elem,bool (*cmp)(T,T));
 };
 
@@ -86,6 +87,13 @@ typename::DoubleLinkedList<T>::iterator DoubleLinkedList<T>::search(T target){
         iter++;
     }
     return (ctrl?iter:nullptr);
+}
+
+template<typename T>
+inline void DoubleLinkedList<T>::resize(int num){
+    T temp;
+    for(int i=0;i<num;i++)
+        this->push_back(temp);
 }
 
 template<typename T>
@@ -153,7 +161,7 @@ bool DoubleLinkedList<T>::empty(){
 }
 
 template<typename T>
-T DoubleLinkedList<T>::operator[](int idx){
+T& DoubleLinkedList<T>::operator[](int idx){
     int accumulator=0;
     Node<T>* iter=_start;
     try{

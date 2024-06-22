@@ -1,8 +1,7 @@
 #include "../inc/TimeTable.h"
-#include "TimeTable.h"
 
 bool Time::operator==(const Time & t){
-    return dd==t.dd&&hh==t.hh&&mm==t.mm&&ss==t.ss;
+    return yy==t.yy&&MM==t.MM&&dd==t.dd&&hh==t.hh&&mm==t.mm&&ss==t.ss;
 }
 
 bool Time::operator!=(const Time & t){
@@ -11,28 +10,35 @@ bool Time::operator!=(const Time & t){
 
 bool Time::operator<(const Time & t)
 {
+    if(yy>t.yy)
+        return false;
+    if(MM>t.MM)
+        return false;
     if(dd>t.dd)
-        return true;
+        return false;
     if(hh>t.hh)
-        return true;
+        return false;
     if(mm>t.mm)
-        return true;
+        return false;
     if(ss>t.ss)
-        return true;
-    return false;
+        return false;
+    return true;
 }
 
 bool Time::operator>(const Time & t){
-    if(dd>t.dd)
-        return true;
-    if(hh>t.hh)
-        return true;
-    if(mm>t.mm)
-        return true;
-    if(ss>t.ss)
-        return true;
-    return false;
-    return false;
+    if(yy<t.yy)
+        return false;
+    if(MM<t.MM)
+        return false;
+    if(dd<t.dd)
+        return false;
+    if(hh<t.hh)
+        return false;
+    if(mm<t.mm)
+        return false;
+    if(ss<t.ss)
+        return false;
+    return true;
 }
 
 bool Time::operator<=(const Time & t){

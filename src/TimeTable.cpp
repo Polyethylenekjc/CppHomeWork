@@ -57,3 +57,6 @@ bool TimeTable::intersect(const TimeTable & tb){
 bool TimeTable::operator<=(const TimeTable & tb){
     return this->_end<=tb._start;
 }
+void TimeTable::changeapproval(){
+    this->_isapproval=!this->_isapproval;
+}

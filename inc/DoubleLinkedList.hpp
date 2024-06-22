@@ -1,8 +1,7 @@
 #ifndef DOUBLELINKEDLIST
 #define DOUBLELINKEDLIST
 
-#include<iostream>
-#include<fstream>
+#include"inc.h"
 using namespace std;
 
 template<typename T>
@@ -62,32 +61,33 @@ class DoubleLinkedList{
         bool empty();
         bool insert(const T& elem,iterator iter=nullptr);
         bool erase(iterator iter);
+        bool erase(int idx);
         int getLen();
         void show();
         bool push_back(const T &elem);
         T& operator[](int idx);
         iterator begin();
         iterator end();
-        iterator search(T target);
         void resize(int num);
         bool orderinsert(const T& elem,bool (*cmp)(T,T));
+        template<typename U,typename V>
+        iterator search(U target,bool (*cmp)(U,V)){
+            iterator iter(_start);
+            bool ctrl=false;
+            while(true){
+                if(cmp(target,(*iter).data)){
+                    ctrl=true;
+                    break;
+                }
+                if(iter==_end)
+                    break;
+                iter++;
+            }   
+            return (ctrl?iter:nullptr);
+        }
 };
 
-template<typename T>
-typename::DoubleLinkedList<T>::iterator DoubleLinkedList<T>::search(T target){
-    iterator iter(_start);
-    bool ctrl=false;
-    while(true){
-        if((*iter).data==target){
-            ctrl=true;
-            break;
-        }
-        if(iter==_end)
-            break;
-        iter++;
-    }
-    return (ctrl?iter:nullptr);
-}
+
 
 template<typename T>
 inline void DoubleLinkedList<T>::resize(int num){
@@ -214,6 +214,12 @@ template<typename T>
 bool DoubleLinkedList<T>::erase(iterator iter){
     Node<T> *i=iter.getptr();
     _listLen--;
+    if(_listLen==-1){
+        delete _start;
+        _start=nullptr;
+        _end=nullptr;
+        return true;
+    }
     if(iter==_start){
         Node<T> *temp=_start->_next;
         delete _start;
@@ -236,11 +242,20 @@ bool DoubleLinkedList<T>::erase(iterator iter){
 
 template<typename T>
 void DoubleLinkedList<T>::show(){
-    Node<T>* iter=_start;
+    system("clear");
+    Node<T>* iter=_start;int i=1;
     while(iter!=NULL){
+        cout<<"Number:"<<i<<endl;
         cout<<(iter->data)<<"\n";
         iter=iter->_next;
     }
 }
 
+template<typename T>
+bool DoubleLinkedList<T>::erase(int idx){
+    iterator iter(&(*this)[idx]);
+    return erase(iter);
+}
+
 #endif
+

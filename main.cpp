@@ -1,5 +1,5 @@
-#include"DoubleLinkedList.hpp"
-#include"File.hpp"
+#include"inc/DoubleLinkedList.hpp"
+#include"inc/File.hpp"
 #include<algorithm>
 #include<string>
 using namespace std;

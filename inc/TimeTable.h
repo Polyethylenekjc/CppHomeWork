@@ -1,7 +1,7 @@
 #ifndef TIMETABLE
 #define TIMETABLE
-#include<string>
-#include<iostream>
+
+#include"inc.h"
 using namespace std;
 
 class Time{
@@ -35,15 +35,24 @@ class Time{
 class TimeTable{
     private:
         Time _start,_end;
-        string name;
+        string _name;
+        bool _isapproval;
     public:
         TimeTable(){};
-        TimeTable(string n1,string y1,string m1,string a1,string b1,string c1,string d1,string y2,string m2,string a2,string b2,string c2,string d2):name(n1),_start(y1,m1,a1,b1,c1,d1),_end(y2,m2,a2,b2,c2,d2){};
+        TimeTable(string n1,string y1,string m1,string a1,string b1,string c1,string d1,string y2,string m2,string a2,string b2,string c2,string d2):_name(n1),_start(y1,m1,a1,b1,c1,d1),_end(y2,m2,a2,b2,c2,d2){
+            _isapproval=false;
+        };
         bool intersect(const TimeTable&  tb);
         bool operator<=(const TimeTable& tb);
+        void changeapproval();
         friend ostream& operator<<(ostream& out,TimeTable& tb){
-            return out<<"Name:"<<tb.name<<"\nTime:"<<tb._start<<"   ->"<<tb._end<<endl;
+            if(tb._isapproval)
+                printGreen("Approved");
+            else
+                printRed("Waiting for approval");
+            return out<<"Name:"<<tb._name<<"\nTime:"<<tb._start<<"   ->"<<tb._end<<endl;
         }
+        inline string get_name() const { return _name; }
 };
 
 #endif

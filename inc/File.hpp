@@ -2,8 +2,7 @@
 #define FILEOPERATE
 
 #include<fstream>
-#include<string>
-#include<iostream>
+#include"inc.h"
 using namespace std;
 
 template<typename T,typename U>

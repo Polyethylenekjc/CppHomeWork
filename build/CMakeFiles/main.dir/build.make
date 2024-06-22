@@ -83,33 +83,49 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/Code/Homework/main.cpp -o CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.s
 
-CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o: /mnt/e/Code/Homework/src/File.cpp
-CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/Code/Homework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o -MF CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o.d -o CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o -c /mnt/e/Code/Homework/src/File.cpp
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o: /mnt/e/Code/Homework/src/ClassRoom.cpp
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/Code/Homework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o -MF CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o.d -o CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o -c /mnt/e/Code/Homework/src/ClassRoom.cpp
 
-CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/Code/Homework/src/File.cpp > CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.i
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/Code/Homework/src/ClassRoom.cpp > CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.i
 
-CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/Code/Homework/src/File.cpp -o CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.s
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/Code/Homework/src/ClassRoom.cpp -o CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.s
+
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homework/src/TimeTable.cpp
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/Code/Homework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o -MF CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o.d -o CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o -c /mnt/e/Code/Homework/src/TimeTable.cpp
+
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/e/Code/Homework/src/TimeTable.cpp > CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.i
+
+CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/e/Code/Homework/src/TimeTable.cpp -o CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.o" \
-"CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o"
+"CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o" \
+"CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 /mnt/e/Code/Homework/bin/main: CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.o
-/mnt/e/Code/Homework/bin/main: CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o
+/mnt/e/Code/Homework/bin/main: CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o
+/mnt/e/Code/Homework/bin/main: CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o
 /mnt/e/Code/Homework/bin/main: CMakeFiles/main.dir/build.make
 /mnt/e/Code/Homework/bin/main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/Code/Homework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /mnt/e/Code/Homework/bin/main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/Code/Homework/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /mnt/e/Code/Homework/bin/main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

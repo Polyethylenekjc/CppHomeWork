@@ -12,12 +12,10 @@ class ClassRommBase{
         DoubleLinkedList<TimeTable> _booklist;
     public:
         ClassRommBase(){};
-        void addnewattribute(string k1,string k2){
-            _attribute[k1]=k2;
-        }
-        void eraseattribute(string k1){
-            _attribute.erase(k1);
-        }
+        void addAttribute(string k1,string k2);
+        void eraseAttribute(string k1);
+        void addBooklist(std::string n1,int a1,int b1,int c1,int d1,int a2,int b2,int c2,int d2);
+        void showBooklist();
 }; 
 
 

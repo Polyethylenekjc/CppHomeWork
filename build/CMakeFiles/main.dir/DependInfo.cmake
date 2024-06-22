@@ -9,7 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/e/Code/Homework/main.cpp" "CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.o" "gcc" "CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.o.d"
-  "/mnt/e/Code/Homework/src/File.cpp" "CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o" "gcc" "CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o.d"
+  "/mnt/e/Code/Homework/src/ClassRoom.cpp" "CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o" "gcc" "CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o.d"
+  "/mnt/e/Code/Homework/src/TimeTable.cpp" "CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o" "gcc" "CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o.d"
   )
 
 # Targets to which this target links.

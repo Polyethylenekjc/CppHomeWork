@@ -153,29 +153,53 @@ mnt/e/Code/Homework/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/main.cpp.s
 .PHONY : mnt/e/Code/Homework/main.cpp.s
 
-mnt/e/Code/Homework/src/File.o: mnt/e/Code/Homework/src/File.cpp.o
-.PHONY : mnt/e/Code/Homework/src/File.o
+mnt/e/Code/Homework/src/ClassRoom.o: mnt/e/Code/Homework/src/ClassRoom.cpp.o
+.PHONY : mnt/e/Code/Homework/src/ClassRoom.o
 
 # target to build an object file
-mnt/e/Code/Homework/src/File.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.o
-.PHONY : mnt/e/Code/Homework/src/File.cpp.o
+mnt/e/Code/Homework/src/ClassRoom.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o
+.PHONY : mnt/e/Code/Homework/src/ClassRoom.cpp.o
 
-mnt/e/Code/Homework/src/File.i: mnt/e/Code/Homework/src/File.cpp.i
-.PHONY : mnt/e/Code/Homework/src/File.i
+mnt/e/Code/Homework/src/ClassRoom.i: mnt/e/Code/Homework/src/ClassRoom.cpp.i
+.PHONY : mnt/e/Code/Homework/src/ClassRoom.i
 
 # target to preprocess a source file
-mnt/e/Code/Homework/src/File.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.i
-.PHONY : mnt/e/Code/Homework/src/File.cpp.i
+mnt/e/Code/Homework/src/ClassRoom.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.i
+.PHONY : mnt/e/Code/Homework/src/ClassRoom.cpp.i
 
-mnt/e/Code/Homework/src/File.s: mnt/e/Code/Homework/src/File.cpp.s
-.PHONY : mnt/e/Code/Homework/src/File.s
+mnt/e/Code/Homework/src/ClassRoom.s: mnt/e/Code/Homework/src/ClassRoom.cpp.s
+.PHONY : mnt/e/Code/Homework/src/ClassRoom.s
 
 # target to generate assembly for a file
-mnt/e/Code/Homework/src/File.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/File.cpp.s
-.PHONY : mnt/e/Code/Homework/src/File.cpp.s
+mnt/e/Code/Homework/src/ClassRoom.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.s
+.PHONY : mnt/e/Code/Homework/src/ClassRoom.cpp.s
+
+mnt/e/Code/Homework/src/TimeTable.o: mnt/e/Code/Homework/src/TimeTable.cpp.o
+.PHONY : mnt/e/Code/Homework/src/TimeTable.o
+
+# target to build an object file
+mnt/e/Code/Homework/src/TimeTable.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o
+.PHONY : mnt/e/Code/Homework/src/TimeTable.cpp.o
+
+mnt/e/Code/Homework/src/TimeTable.i: mnt/e/Code/Homework/src/TimeTable.cpp.i
+.PHONY : mnt/e/Code/Homework/src/TimeTable.i
+
+# target to preprocess a source file
+mnt/e/Code/Homework/src/TimeTable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.i
+.PHONY : mnt/e/Code/Homework/src/TimeTable.cpp.i
+
+mnt/e/Code/Homework/src/TimeTable.s: mnt/e/Code/Homework/src/TimeTable.cpp.s
+.PHONY : mnt/e/Code/Homework/src/TimeTable.s
+
+# target to generate assembly for a file
+mnt/e/Code/Homework/src/TimeTable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.s
+.PHONY : mnt/e/Code/Homework/src/TimeTable.cpp.s
 
 # Help Target
 help:
@@ -189,9 +213,12 @@ help:
 	@echo "... mnt/e/Code/Homework/main.o"
 	@echo "... mnt/e/Code/Homework/main.i"
 	@echo "... mnt/e/Code/Homework/main.s"
-	@echo "... mnt/e/Code/Homework/src/File.o"
-	@echo "... mnt/e/Code/Homework/src/File.i"
-	@echo "... mnt/e/Code/Homework/src/File.s"
+	@echo "... mnt/e/Code/Homework/src/ClassRoom.o"
+	@echo "... mnt/e/Code/Homework/src/ClassRoom.i"
+	@echo "... mnt/e/Code/Homework/src/ClassRoom.s"
+	@echo "... mnt/e/Code/Homework/src/TimeTable.o"
+	@echo "... mnt/e/Code/Homework/src/TimeTable.i"
+	@echo "... mnt/e/Code/Homework/src/TimeTable.s"
 .PHONY : help
 
 

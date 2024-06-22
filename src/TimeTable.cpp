@@ -45,5 +45,9 @@ bool Time::operator>=(const Time & t){
 
 
 bool TimeTable::intersect(const TimeTable & tb){
-    return !(this->end<=tb.start||this->start>=tb.end);
+    return !(this->_end<=tb._start||this->_start>=tb._end);
+}
+
+bool TimeTable::operator<=(const TimeTable & tb){
+    return this->_end<=tb._start;
 }

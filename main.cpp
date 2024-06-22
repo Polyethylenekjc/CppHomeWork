@@ -1,5 +1,5 @@
-#include"inc/DoubleLinkedList.hpp"
-#include"inc/File.hpp"
+#include"DoubleLinkedList.hpp"
+#include"File.hpp"
 #include<algorithm>
 #include<string>
 using namespace std;
@@ -27,7 +27,7 @@ class test{
 int main(){
     DoubleLinkedList<test> t;
     FileOperate<DoubleLinkedList<test>,test> f("test.dat");
-    t.push_back({"一二三四五六","孔佳宸"});
+    t.push_back({"一二三四","孔佳宸"});
     f.write(t);
     f.read(t);
     t.show();

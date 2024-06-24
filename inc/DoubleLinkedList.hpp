@@ -2,6 +2,7 @@
 #define DOUBLELINKEDLIST
 
 #include"inc.h"
+#include"ColorPrint.hpp"
 using namespace std;
 
 template<typename T>
@@ -10,18 +11,21 @@ class Node{
         T data;
         Node<T>* _next;
         Node<T>* _last;
+    public:
+        T* pointer(){
+            return &data;
+        }
 };
 
 template<typename T>
 class DoubleLinkedList{
     private:
-
         Node<T> *_end;
         int _listLen;
-        class iterator{
-            private:
-                Node<T> *_ptr;
+    public:
+    class iterator{
             public:
+                Node<T> *_ptr;
                 iterator(Node<T> *p=nullptr):_ptr(p){};
                 iterator operator--(){
                     _ptr=_ptr->_last;
@@ -30,7 +34,7 @@ class DoubleLinkedList{
                 bool operator!=(iterator i){
                     return !(*this==i);
                 }
-                Node<T> operator*() const{
+                Node<T>& operator*() const{
                     return *(_ptr);
                 }
                 Node<T>* operator->() const{
@@ -55,7 +59,6 @@ class DoubleLinkedList{
                     return _ptr;
                 }
         };
-    public:
         Node<T> *_start;
         DoubleLinkedList();
         bool empty();
@@ -68,10 +71,12 @@ class DoubleLinkedList{
         T& operator[](int idx);
         iterator begin();
         iterator end();
-        void resize(int num);
+        void addnewnode(int num);
         bool orderinsert(const T& elem,bool (*cmp)(T,T));
         template<typename U,typename V>
         iterator search(U target,bool (*cmp)(U,V)){
+            if(_listLen==-1)
+                return nullptr;
             iterator iter(_start);
             bool ctrl=false;
             while(true){
@@ -90,7 +95,7 @@ class DoubleLinkedList{
 
 
 template<typename T>
-inline void DoubleLinkedList<T>::resize(int num){
+inline void DoubleLinkedList<T>::addnewnode(int num){
     T temp;
     for(int i=0;i<num;i++)
         this->push_back(temp);
@@ -242,10 +247,12 @@ bool DoubleLinkedList<T>::erase(iterator iter){
 
 template<typename T>
 void DoubleLinkedList<T>::show(){
-    system("clear");
+    if(this->_listLen==-1){
+        return printMagenta("No Data");
+    }
     Node<T>* iter=_start;int i=1;
     while(iter!=NULL){
-        cout<<"Number:"<<i<<endl;
+        cout<<"Number:"<<i++<<endl;
         cout<<(iter->data)<<"\n";
         iter=iter->_next;
     }

@@ -1,58 +1,66 @@
 #include "../inc/ClassRoom.h"
 
 
-void ClassRommBase::addAttribute(string k1, string k2){
-     _attribute.insert(pair<string,string>(k1,k2));
+void ClassRommBase::addAttribute(char* k1,char* k2){
+    strcpy(_attributelist[idxAttribute].key,k1);
+    strcpy(_attributelist[idxAttribute++].key,k2);
 }
 
-void ClassRommBase::eraseAttribute(string k1){
-    _attribute.erase(k1);
-}
-
-void ClassRommBase::eraseBooklist(string k1){
-    _booklist.erase(_booklist.search(k1,cmp));
-}
-
-void ClassRommBase::addBooklist(string n1,string y1,string m1,string a1,string b1,string c1,string d1,
-string y2,string m2,string a2,string b2,string c2,string d2){
-    TimeTable temp(n1,y1,m1,a1,b1,c1,d1,y2,m2,a2,b2,c2,d2);
-    auto i=_booklist.begin();
-    if(_booklist.getLen()==-1){
-        _booklist.insert(temp);
-        return;
-    }
-    for(;i!=nullptr;i++){
-        if(temp<=(*i).data&&(!(*i)._last?true:!temp.intersect((*i)._last->data))){
+void ClassRommBase::eraseAttribute(char* k1){
+    int i=0;
+    for(;i<idxAttribute;i++){
+        if(strcmp(_attributelist[i].map,k1)==0)
             break;
-        }
     }
-    if(!i.getptr()){
-        cerr<<"Error!Appointment overlap\n";
-        return;
+    for(++i;i<20;i++){
+        _attributelist[i-1]=_attributelist[i];
     }
-    _booklist.insert(temp,i);
+}
+
+void ClassRommBase::eraseBooklist(char* k1){
+    int i=0;
+    for(;i<idxBooklist;i++){
+        if(strcmp(_booklist[i].get_name(),k1)==0)
+            break;
+    }
+    for(++i;i<20;i++){
+        _booklist[i-1]=_booklist[i];
+    }
+}
+
+void ClassRommBase::addBooklist(char* n1,char* y1,char* m1,char* a1,char* b1,char* c1,char* d1,
+char* y2,char* m2,char* a2,char* b2,char* c2,char* d2){
+    TimeTable temp(n1,y1,m1,a1,b1,c1,d1,y2,m2,a2,b2,c2,d2);
+    for(int i=0;i<idxBooklist;i++){
+        if(_booklist[i].intersect(temp))
+            return printRed("Error!Appointment overlap\n");
+    }
+    _booklist[idxBooklist++]=temp;
 }
 
 void ClassRommBase::showBooklist(){
-    _booklist.show();
+    for(int i=0;i<idxBooklist;i++)
+        cout<<_booklist[i];
 }
 
-void ClassRommBase::shouwAttribute(){
-    for(auto iter:_attribute){
-        cout<<iter.first<<"\t"<<iter.second<<endl;
-    }
+void ClassRommBase::ShowAttribute(){
+    for(int i=0;i<idxAttribute;i++)
+        cout<<_attributelist[i];
 }
 
-void ClassRommBase::adminapproval(User userlogin){
+void ClassRommBase::adminApproval(User userlogin){
     system("clear");
-    if(userlogin.get__level()!=0)
-        return printMagenta("Permission denied");
+    cout<<"-------------------Approval--------------------\n";
+    if(userlogin.get__level()!=0){
+        return printMagenta("Permission denied");}
     this->showBooklist();
     cout<<"\n\n-----Choose the Approval Target-----\n";
-    string temp;
+    char temp[999]="";
     cin>>temp;
-    for(auto i:temp){
-        int idx=(i-'0')-1;
+    for(int i=0;i<strlen(temp);i++){
+        int idx=(temp[i]-'0')-1;
+        if(idx==-1)
+            return;
         _booklist[idx].changeapproval();
     }
 }

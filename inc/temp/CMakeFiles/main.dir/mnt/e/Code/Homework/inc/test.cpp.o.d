@@ -1,6 +1,6 @@
 CMakeFiles/main.dir/mnt/e/Code/Homework/inc/test.cpp.o: \
  /mnt/e/Code/Homework/inc/test.cpp /usr/include/stdc-predef.h \
- /mnt/e/Code/Homework/inc/DoubleLinkedList.hpp \
+ /mnt/e/Code/Homework/inc/MyUi.hpp /mnt/e/Code/Homework/inc/ClassRoom.h \
  /mnt/e/Code/Homework/inc/inc.h /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -150,14 +150,13 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/inc/test.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /mnt/e/Code/Homework/inc/ColorPrint.h /usr/include/c++/11/stdlib.h \
+ /mnt/e/Code/Homework/inc/DoubleLinkedList.hpp \
  /mnt/e/Code/Homework/inc/User.h /mnt/e/Code/Homework/inc/File.hpp \
  /usr/include/c++/11/fstream /usr/include/c++/11/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc \
- /mnt/e/Code/Homework/inc/TimeTable.h \
- /mnt/e/Code/Homework/inc/ClassRoom.h /usr/include/c++/11/map \
+ /mnt/e/Code/Homework/inc/TimeTable.h /usr/include/c++/11/map \
  /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/node_handle.h \

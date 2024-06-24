@@ -3,7 +3,8 @@
 
 CMakeFiles/main.dir/mnt/e/Code/Homework/inc/test.cpp.o: /mnt/e/Code/Homework/inc/test.cpp \
   /usr/include/stdc-predef.h \
-  /mnt/e/Code/Homework/inc/DoubleLinkedList.hpp \
+  /mnt/e/Code/Homework/inc/MyUi.hpp \
+  /mnt/e/Code/Homework/inc/ClassRoom.h \
   /mnt/e/Code/Homework/inc/inc.h \
   /usr/include/c++/11/string \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -183,8 +184,7 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/inc/test.cpp.o: /mnt/e/Code/Homework/inc
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /mnt/e/Code/Homework/inc/ColorPrint.h \
-  /usr/include/c++/11/stdlib.h \
+  /mnt/e/Code/Homework/inc/DoubleLinkedList.hpp \
   /mnt/e/Code/Homework/inc/User.h \
   /mnt/e/Code/Homework/inc/File.hpp \
   /usr/include/c++/11/fstream \
@@ -193,7 +193,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/inc/test.cpp.o: /mnt/e/Code/Homework/inc
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
   /mnt/e/Code/Homework/inc/TimeTable.h \
-  /mnt/e/Code/Homework/inc/ClassRoom.h \
   /usr/include/c++/11/map \
   /usr/include/c++/11/bits/stl_tree.h \
   /usr/include/c++/11/ext/aligned_buffer.h \
@@ -390,8 +389,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/ClassRoom.cpp.o: /mnt/e/Code/Homewor
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /mnt/e/Code/Homework/inc/ColorPrint.h \
-  /usr/include/c++/11/stdlib.h \
   /mnt/e/Code/Homework/inc/DoubleLinkedList.hpp \
   /mnt/e/Code/Homework/inc/User.h \
   /mnt/e/Code/Homework/inc/File.hpp \
@@ -597,8 +594,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
   /usr/include/c++/11/bits/ostream.tcc \
   /usr/include/c++/11/istream \
   /usr/include/c++/11/bits/istream.tcc \
-  /mnt/e/Code/Homework/inc/ColorPrint.h \
-  /usr/include/c++/11/stdlib.h \
   /mnt/e/Code/Homework/inc/DoubleLinkedList.hpp \
   /mnt/e/Code/Homework/inc/User.h \
   /mnt/e/Code/Homework/inc/File.hpp \
@@ -622,8 +617,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/c++/11/bits/stl_map.h:
 
-/mnt/e/Code/Homework/inc/ClassRoom.h:
-
 /usr/include/c++/11/bits/fstream.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
@@ -633,10 +626,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 /mnt/e/Code/Homework/inc/File.hpp:
 
 /mnt/e/Code/Homework/inc/User.h:
-
-/usr/include/c++/11/stdlib.h:
-
-/mnt/e/Code/Homework/inc/ColorPrint.h:
 
 /usr/include/c++/11/bits/istream.tcc:
 
@@ -714,6 +703,8 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/endian.h:
 
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
@@ -730,19 +721,9 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/wchar.h:
 
-/usr/include/c++/11/bits/predefined_ops.h:
-
 /usr/include/c++/11/bits/ostream.tcc:
 
 /usr/include/c++/11/clocale:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/include/c++/11/new:
-
-/usr/include/c++/11/bits/ptr_traits.h:
-
-/usr/include/c++/11/bits/stl_iterator.h:
 
 /usr/include/c++/11/bits/concept_check.h:
 
@@ -764,10 +745,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
@@ -781,6 +758,8 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 /usr/include/c++/11/debug/assertions.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /usr/include/c++/11/bits/node_handle.h:
 
@@ -810,6 +789,48 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/pthread.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/c++/11/bits/ptr_traits.h:
+
+/usr/include/c++/11/bits/stl_iterator.h:
+
+/usr/include/c++/11/new:
+
+/usr/include/c++/11/bits/predefined_ops.h:
+
+/mnt/e/Code/Homework/inc/ClassRoom.h:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/11/iosfwd:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/11/string:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/c++/11/tuple:
+
+/usr/include/c++/11/bits/stl_tree.h:
+
+/usr/include/c++/11/type_traits:
+
 /usr/include/c++/11/bits/invoke.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
@@ -824,25 +845,15 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
+/mnt/e/Code/Homework/inc/MyUi.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+/usr/include/c++/11/bits/move.h:
 
-/usr/include/c++/11/string:
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/c++/11/bits/alloc_traits.h:
 
@@ -876,12 +887,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/c++/11/ext/type_traits.h:
 
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/c++/11/iosfwd:
-
 /usr/include/c++/11/debug/debug.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
@@ -906,16 +911,6 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/c++/11/bits/move.h:
-
-/usr/include/c++/11/tuple:
-
-/usr/include/c++/11/bits/stl_tree.h:
-
-/usr/include/c++/11/type_traits:
-
 /usr/include/c++/11/bits/exception_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h:
@@ -932,9 +927,9 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 
 /usr/include/c++/11/cctype:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
 /mnt/e/Code/Homework/inc/DoubleLinkedList.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
@@ -1023,5 +1018,3 @@ CMakeFiles/main.dir/mnt/e/Code/Homework/src/TimeTable.cpp.o: /mnt/e/Code/Homewor
 /usr/include/c++/11/bits/hash_bytes.h:
 
 /usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:

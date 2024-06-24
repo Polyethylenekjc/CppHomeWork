@@ -2,24 +2,53 @@
 #define TIMETABLE
 
 #include"inc.h"
+#include"ColorPrint.hpp"
 using namespace std;
 
 class Time{
     private:
-        string yy,MM,dd,hh,mm,ss;
+        char *yy,*MM,*dd,*hh,*mm,*ss;
     public:
         Time(){};
-        Time(string yy,string mm,string a,string b,string c,string d):yy(yy),MM(mm),dd(a),hh(b),mm(c),ss(d){
-            if(mm.length()==1)
-                mm="0"+mm;
-            if(MM.length()==1)
-                MM="0"+MM;
-            if(hh.length()==1)
-                hh="0"+hh;
-            if(ss.length()==1)
-                ss="0"+ss;
-            if(MM.length()==1)
-                MM="0"+MM;
+        Time(char* y,char* M,char* d,char* h,char* m,char* s){
+            char* zero;
+            *(zero)='0';
+            if(strlen(y)<=1){
+                strcpy(yy,strcat(zero,y));
+            }
+            else{
+                strcpy(yy,y);
+            }
+            if(strlen(M)<=1){
+                strcpy(MM,strcat(zero,M));
+            }
+            else{
+                strcpy(MM,M);
+            }
+            if(strlen(d)<=1){
+                strcpy(dd,strcat(zero,d));
+            }
+            else{
+                strcpy(dd,d);
+            }
+            if(strlen(h)<=1){
+                strcpy(hh,strcat(zero,h));
+            }
+            else{
+                strcpy(hh,h);
+            }
+            if(strlen(m)<=1){
+                strcpy(mm,strcat(zero,m));
+            }
+            else{
+                strcpy(mm,m);
+            }
+            if(strlen(s)<=1){
+                strcpy(ss,strcat(zero,s));
+            }
+            else{
+                strcpy(ss,s);
+            }
         };
         bool operator==(const Time& t);
         bool operator!=(const Time& t);
@@ -35,11 +64,11 @@ class Time{
 class TimeTable{
     private:
         Time _start,_end;
-        string _name;
+        char* _name;
         bool _isapproval;
     public:
         TimeTable(){};
-        TimeTable(string n1,string y1,string m1,string a1,string b1,string c1,string d1,string y2,string m2,string a2,string b2,string c2,string d2):_name(n1),_start(y1,m1,a1,b1,c1,d1),_end(y2,m2,a2,b2,c2,d2){
+        TimeTable(char* n1,char* y1,char* m1,char* a1,char* b1,char* c1,char* d1,char* y2,char* m2,char* a2,char* b2,char* c2,char* d2):_name(n1),_start(y1,m1,a1,b1,c1,d1),_end(y2,m2,a2,b2,c2,d2){
             _isapproval=false;
         };
         bool intersect(const TimeTable&  tb);
@@ -52,7 +81,7 @@ class TimeTable{
                 printRed("Waiting for approval");
             return out<<"Name:"<<tb._name<<"\nTime:"<<tb._start<<"   ->"<<tb._end<<endl;
         }
-        inline string get_name() const { return _name; }
+        inline char* get_name() const { return _name; }
 };
 
 #endif

@@ -2,25 +2,45 @@
 #define CLASSROOM
 
 #include"inc.h"
-#include<map>
+#include"ColorPrint.hpp"
 using namespace std;
+
+struct Attribute{
+    char map[20],key[20];
+    friend ostream& operator<<(ostream& out,Attribute& att){
+        return out<<"属性名:"<<att.map<<"\n属性值:"<<att.key;
+    }
+};
 
 class ClassRommBase{
     protected:
-        map<string,string> _attribute;
-        DoubleLinkedList<TimeTable> _booklist;
-        static bool cmp(string n1,const TimeTable& t1){
-            return n1==t1.get_name(); 
-        }
+        Attribute _attributelist[20];
+        TimeTable _booklist[20];
+        int idxAttribute=0,idxBooklist=0;
     public:
+        char _name[20];
         ClassRommBase(){};
-        void addAttribute(string k1,string k2);
-        void eraseAttribute(string k1);
-        void eraseBooklist(string k1);
-        void addBooklist(std::string n1,string y1,string m1,string a1,string b1,string c1,string d1,string y2,string m2,string a2,string b2,string c2,string d2);
+        void addAttribute(char *k1,char *k2);
+        void eraseAttribute(char *k1);
+        void eraseBooklist(char* k1);
+        void addBooklist(char* n1,char* y1,char* m1,char* a1,char* b1,char* c1,char* d1,char* y2,char* m2,char* a2,char* b2,char* c2,char* d2);
         void showBooklist();
-        void shouwAttribute();
-        void adminapproval(User userlogin);
+        void ShowAttribute();
+        void adminApproval(User userlogin);
+        friend ostream& operator<<(ostream& out,ClassRommBase& crb){
+            out<<"ClassRoom:"<<crb._name<<endl;
+            char key[2]="";
+            cout<<"\nShow Attribute?(Yes:y):";
+            cin>>key;
+
+            if(strcmp(key,"y")==0)
+                crb.ShowAttribute();
+            cout<<"\nShow Booklist?(Yes:y):";
+            cin>>key;
+            if(strcmp(key,"y")==0)
+                crb.showBooklist();
+            return out;
+        }
 }; 
 
 

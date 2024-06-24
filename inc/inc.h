@@ -1,13 +1,13 @@
 #ifndef _INC_
 #define _INC_
 
-#include<string>
+#include<cstring>
 #include<iostream>
-#include"ColorPrint.h"
 #include"DoubleLinkedList.hpp"
 #include"User.h"
 #include"File.hpp"
 #include"TimeTable.h"
+#include<stdlib.h>
 
 using namespace std;
 

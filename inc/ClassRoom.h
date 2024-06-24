@@ -21,7 +21,6 @@ class ClassRommBase{
         void showBooklist();
         void shouwAttribute();
         void adminapproval(User userlogin);
-
 }; 
 
 

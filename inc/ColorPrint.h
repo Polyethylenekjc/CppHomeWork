@@ -12,18 +12,11 @@ using namespace std;
 
 
 template<typename T>
-void printRed(T data){
-    cout<<RED<<data<<CLEAR<<endl;
-}
+void printRed(T data);
 
 template<typename T>
-void printGreen(T data){
-    cout<<GREEN<<data<<CLEAR<<endl;
-}
+void printGreen(T data);
 
 template<typename T>
-void printMagenta(T data){
-    cout<<MAGENTA<<data<<CLEAR<<endl;
-}
-
+void printMagenta(T data);
 #endif

@@ -38,8 +38,8 @@ class User{
         friend ostream& operator<<(ostream& out,User& user){
             return out<<"Name:"<<user._username<<"\nLevel:"<<user.get__level()<<endl;
         }
-        void empowerment(){
-            _level=0;
+        void empowerment(int n){
+            _level=n;
         }
         inline int get__level() const {return _level;}
 };

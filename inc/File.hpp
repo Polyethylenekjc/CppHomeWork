@@ -73,12 +73,7 @@ bool FileOperate<T,U>::readfromfile(T & elem){
 template<typename T,typename U>
 void FileOperate<T,U>::set_dir(char* dir){
     strcpy(_dir,dir);
-    ifstream temp(_dir);
-    char key[]="touch ";
-    if(!temp.is_open())
-        system(strcpy(key,_dir));
     this->isinit=true;
-    temp.close();
 }
 
 #endif

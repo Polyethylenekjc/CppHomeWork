@@ -2,13 +2,14 @@
 #define CLASSROOM
 
 #include"inc.h"
+
 #include"ColorPrint.hpp"
 using namespace std;
 
 struct Attribute{
     char map[20]="",key[20]="";
     friend ostream& operator<<(ostream& out,Attribute& att){
-        return out<<"属性名:"<<att.map<<"\n属性值:"<<att.key;
+        return out<<"属性名:"<<att.map<<"\t属性值:"<<att.key<<endl;
     }
 };
 

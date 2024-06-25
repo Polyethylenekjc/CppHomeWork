@@ -7,25 +7,34 @@ void ClassRommBase::addAttribute(char* k1,char* k2){
 }
 
 void ClassRommBase::eraseAttribute(char* k1){
-    int i=0;
+    int i=0;bool find=false;
     for(;i<idxAttribute;i++){
-        if(strcmp(_attributelist[i].map,k1)==0)
+        if(strcmp(_attributelist[i].map,k1)==0){
+            find=true;
             break;
+        }
     }
+    if(!find)
+        return printRed("Error!No object");
     for(++i;i<20;i++){
         _attributelist[i-1]=_attributelist[i];
     }
 }
 
 void ClassRommBase::eraseBooklist(char* k1){
-    int i=0;
+    int i=0;bool find=false;
     for(;i<idxBooklist;i++){
-        if(strcmp(_booklist[i]._name,k1)==0)
+        if(strcmp(_booklist[i]._name,k1)==0){
+            find=true;
             break;
+        }
     }
+    if(!find)
+        return printRed("Error!No object");
     for(++i;i<20;i++){
         _booklist[i-1]=_booklist[i];
     }
+    idxBooklist--;
 }
 
 void ClassRommBase::addBooklist(char *name){
@@ -33,6 +42,9 @@ void ClassRommBase::addBooklist(char *name){
     strcpy(temp._name,name);
     temp.setstart();
     temp.setend();
+    for(int i=0;i<idxBooklist;i++)
+        if(_booklist[i].intersect(temp))
+            return printRed("Error!Time conflicts");
     _booklist[idxBooklist++]=temp;
 }
 
@@ -49,7 +61,7 @@ void ClassRommBase::ShowAttribute(){
 void ClassRommBase::adminApproval(User userlogin){
     system("clear");
     cout<<"-------------------Approval--------------------\n";
-    if(userlogin.get__level()!=0){
+    if(userlogin.get__level()==1){
         return printMagenta("Permission denied");}
     this->showBooklist();
     cout<<"\n\n-----Choose the Approval Target-----\n";

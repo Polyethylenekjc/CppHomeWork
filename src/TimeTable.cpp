@@ -10,33 +10,33 @@ bool Time::operator!=(const Time & t){
 
 bool Time::operator<(const Time & t)
 {
-    if(yy>t.yy)
+    if(strcmp(yy,t.yy)>0)
         return false;
-    if(MM>t.MM)
+    if(strcmp(MM,t.MM)>0)
         return false;
-    if(dd>t.dd)
+    if(strcmp(hh,t.hh)>0)
         return false;
-    if(hh>t.hh)
+    if(strcmp(hh,t.hh)>0)
         return false;
-    if(mm>t.mm)
+    if(strcmp(mm,t.mm)>0)
         return false;
-    if(ss>t.ss)
+    if(strcmp(ss,t.ss)>0)
         return false;
     return true;
 }
 
 bool Time::operator>(const Time & t){
-    if(yy<t.yy)
+    if(strcmp(yy,t.yy)<0)
         return false;
-    if(MM<t.MM)
+    if(strcmp(MM,t.MM)<0)
         return false;
-    if(dd<t.dd)
+    if(strcmp(hh,t.hh)<0)
         return false;
-    if(hh<t.hh)
+    if(strcmp(hh,t.hh)<0)
         return false;
-    if(mm<t.mm)
+    if(strcmp(mm,t.mm)<0)
         return false;
-    if(ss<t.ss)
+    if(strcmp(ss,t.ss)<0)
         return false;
     return true;
 }

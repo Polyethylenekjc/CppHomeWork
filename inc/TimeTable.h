@@ -59,7 +59,6 @@ class Time{
             else{
                 strcpy(ss,s);
             }
-            cout<<"end";
         };
         bool operator==(const Time& t);
         bool operator!=(const Time& t);
@@ -68,7 +67,7 @@ class Time{
         bool operator<=(const Time& t);
         bool operator>=(const Time& t);
         friend ostream& operator<<(ostream& out,Time& tb){
-            out<<tb.yy<<"/"<<tb.MM<<" "<<tb.dd<<":"<<tb.hh<<":"<<tb.mm<<":"<<tb.ss<<endl;
+            out<<tb.yy<<"/"<<tb.MM<<"/"<<tb.dd<<" "<<tb.hh<<":"<<tb.mm<<":"<<tb.ss<<endl;
             return out;
         }
 };

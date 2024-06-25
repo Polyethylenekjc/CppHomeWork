@@ -1,6 +1,7 @@
 #ifndef _MYUI_
 #define _MYUI_
 #include"ClassRoom.h"
+#include<vector>
 using namespace std;
 
 class MyUi{
@@ -39,7 +40,7 @@ class MyUi{
                     case 2:login();break;
                     default: printRed("Error!Please enter right idx");
                 }
-                sleep(2);
+                sleep(1);
             }
             return true;
         }
@@ -71,7 +72,7 @@ class MyUi{
                 else{
                     printRed("   Incorrect username or password");
                 }
-                sleep(2);
+                sleep(1);
             }
         }
         void _register(){
@@ -84,7 +85,7 @@ class MyUi{
             cin>>password;
             if(_userlist.search(name,cmp).getptr()!=nullptr){
                 printRed("Error!Account already exists");
-                sleep(2);
+                sleep(1);
                 return;
             }
             User temp(name,password,1);
@@ -99,11 +100,15 @@ class MyUi{
             cout<<"\n\n---------选择提权序号---------\n";
             char temp[999]="";
             cin>>temp;
+            cout<<"\n\n----------输入权值----------\n";
+            cout<<"管理员:0 教师:1 审核员:2\n";
+            int n;
+            cin>>n;
             for(int i=0;i<strlen(temp);i++){
                 int idx=(temp[i]-'0')-1;
                 if(idx==-1)
                     return;
-                _userlist[idx].empowerment();
+                _userlist[idx].empowerment(n);
             }
         }
         void newclassroom(){
@@ -179,70 +184,153 @@ class MyUi{
                     case 3:cout<<"输入要删除的属性名:";char key[20];cin>>key;_classroom.getptr()->data.eraseAttribute(key);printGreen("Success");break;
                     default: printRed("Error!Please enter right idx");
                 }
-                sleep(2);
+                sleep(1);
             }
         }
         void UIclasslist(){
             while(1){
                 system("clear");
-                cout<<"----------------Classroom Menu----------------\n";
+                cout<<"-----------------Classroom Menu----------------\n";
                 cout<<"                 1  新建教室                  \n";
                 cout<<"                 2  选定教室                  \n";
                 cout<<"                 3  编辑教室                  \n";
                 cout<<"                 4  删除教室                  \n";
-                cout<<"                 5  管理员审核                \n";
-                cout<<"                 6  预约教室                  \n";
-                cout<<"                 7  输出预约                  \n";
-                cout<<"                 8  显示所有教室              \n";
-                cout<<"                 9  从文件读取                \n";
-                cout<<"                 10 保存到文件                \n";
+                cout<<"                 5  输出所选教室              \n";
+                cout<<"                 6  显示所有教室              \n";
+                cout<<"\n-----------------Book Menu--------------------\n";
+                cout<<"                 7  审核预约                  \n";
+                cout<<"                 8  预约教室                  \n";
+                cout<<"                 9  输出预约                  \n";
+                cout<<"                 10 删除预约                  \n";
+                cout<<"\n-----------------File Menu--------------------\n";
+                cout<<"                 11 从文件读取                \n";
+                cout<<"                 12 保存到文件                \n";
+                cout<<"\n-----------------Other Menu-------------------\n";
+                cout<<"                 13 管理员权限更改            \n";
+                cout<<"                 14 删除账户                  \n";
                 cout<<"                 0  退出                      \n";
-                cout<<"                 输入功能序号:                \n";
+                cout<<"\n\n输入功能序号:";
                 int opt;
                 cin>>opt;
+                char stop;
                 switch(opt){
                     case 0:return;
-                    case 1:newclassroom();break;
+                    case 1:{
+                        if(_user.get__level()==0)  
+                            newclassroom();
+                        else
+                            printMagenta("Permission denied");
+                    }break;
                     case 2:selectclassroom();break;
-                    case 3:UIeditclassroom();break;
+                    case 3:{
+                        if(_user.get__level()==0)  
+                            UIeditclassroom();
+                        else
+                            printMagenta("Permission denied");
+                    }break;
                     case 4:{
-                        if(_isselect)
-                            _classlist.erase(_classroom);
+                        if(_isselect){
+                            if(_user.get__level()==0)  
+                                  _classlist.erase(_classroom);
+                            else
+                                printMagenta("Permission denied");
+                        }
                         else
                             printRed("Error!No classroom selected");
                     }break;
-                    case 5:
-                    {
-                        if(_isselect)
-                            _classroom.getptr()->data.adminApproval(_user);
-                        else
+                    case 5:{
+                        if(_isselect){
+                            cout<<(_classroom._ptr->data);cout<<"Press C To Continue...\n";cin>>stop;
+                        }
+                        else    
                             printRed("Error!No classroom selected");
                     }break;
-                    case 6:{
+                    case 6:system("clear");_classlist.show();cout<<"Press C To Continue...\n";cin>>stop;break;
+                    case 7:
+                    {   
+                        if(_user.get__level()==1){
+                            printMagenta("Permission denied");
+                            break;
+                        }
+                        else{
+                            system("clear");
+                            int acc=0;
+                            for(auto iter=_classlist.begin();iter!=nullptr;iter++){
+                                cout<<"Number:"<<++acc<<endl;
+                                cout<<"Name:"<<iter._ptr->data._name<<endl;
+                                iter._ptr->data.adminApproval(_user);
+                            }
+                        }
+                    }break;
+                    case 8:{
                         if(_isselect){
                             _classroom.getptr()->data.addBooklist(_user._username);
                         }
                         else
                             printRed("Error!No classroom selected");
                     }break;
-                    case 7:system("clear");_classroom._ptr->data.showBooklist();break;
-                    case 8:system("clear");_classlist.show();sleep(2);break;
-                    case 9:readclasslistfromfile();break;
-                    case 10:saveclasslisttofile();break;
+                    case 9:system("clear");_classroom._ptr->data.showBooklist();cout<<"Press C To Continue...\n";cin>>stop;break;
+                    case 10:{
+                        if(_isselect){
+                            _classroom.getptr()->data.eraseBooklist(_user._username);
+                        }
+                        else
+                            printRed("Error!No classroom selected");
+                    }break;
+                    case 11:readclasslistfromfile();break;
+                    case 12:saveclasslisttofile();break;
+                    case 13:adminempowerment();break;
+                    case 14:{   
+                        if(_user.get__level()!=0){
+                            printMagenta("Permission denied");
+                            break;
+                        }
+                        else{
+                            system("clear");
+                            _userlist.show();
+                            cout<<"\n\n---------选择删除序号---------\n";
+                            char temp[999]="";
+                            cin>>temp;
+                            for(int i=0;i<strlen(temp);i++){
+                                int idx=(temp[i]-'0')-1;
+                                if(idx==-1)
+                                    return;
+                                _userlist.erase(idx);
+                            }
+                        }
+                    }break;
                     default: printRed("Error!Please enter right idx");
                 }
-                sleep(2);
+                sleep(1);
             }
         }
         void readclasslistfromfile(){
             char dd[]="/mnt/e/Code/Homework/data/";
-            char *dir=strcat(dd,_user._username);
+            char input[50]="";char opt;
+            cout<<"默认文件名为用户名,使用自定义文件名?(yes/y):";
+            cin>>opt;
+            char *dir;
+            if(opt=='y'){
+                cout<<"请输入文件名:";
+                cin>>input;
+                dir=strcat(dd,input);
+            }
+            else dir=strcat(dd,_user._username);
             _f_classlist.set_dir(dir);
             _f_classlist.readfromfile(_classlist);
         } 
         void saveclasslisttofile(){
             char dd[]="/mnt/e/Code/Homework/data/";
-            char *dir=strcat(dd,_user._username);
+            char input[50]="";char opt;
+            cout<<"默认文件名为用户名,使用自定义文件名?(yes/y):";
+            cin>>opt;
+            char *dir;
+            if(opt=='y'){
+                cout<<"请输入文件名:";
+                cin>>input;
+                dir=strcat(dd,input);
+            }
+            else dir=strcat(dd,_user._username);
             _f_classlist.set_dir(dir);
             _f_classlist.savetofile(_classlist);
         }

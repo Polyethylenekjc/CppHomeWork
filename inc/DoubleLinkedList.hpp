@@ -11,7 +11,6 @@ class Node{
         T data;
         Node<T>* _next;
         Node<T>* _last;
-    public:
         T* pointer(){
             return &data;
         }
@@ -20,6 +19,7 @@ class Node{
 template<typename T>
 class DoubleLinkedList{
     private:
+        Node<T> *_start;
         Node<T> *_end;
         int _listLen;
     public:
@@ -59,7 +59,6 @@ class DoubleLinkedList{
                     return _ptr;
                 }
         };
-        Node<T> *_start;
         DoubleLinkedList();
         bool empty();
         bool insert(const T& elem,iterator iter=nullptr);
@@ -260,7 +259,9 @@ void DoubleLinkedList<T>::show(){
 
 template<typename T>
 bool DoubleLinkedList<T>::erase(int idx){
-    iterator iter(&(*this)[idx]);
+    iterator iter=this->begin();
+    while(idx--)
+        iter++;
     return erase(iter);
 }
 

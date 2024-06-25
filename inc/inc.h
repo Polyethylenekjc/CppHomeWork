@@ -8,6 +8,7 @@
 #include"File.hpp"
 #include"TimeTable.h"
 #include<stdlib.h>
+#include<cstdio>
 
 using namespace std;
 

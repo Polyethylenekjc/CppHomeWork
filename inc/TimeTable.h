@@ -7,48 +7,59 @@ using namespace std;
 
 class Time{
     private:
-        char *yy,*MM,*dd,*hh,*mm,*ss;
+        char yy[5],MM[3],dd[3],hh[3],mm[3],ss[3];
     public:
-        Time(){};
-        Time(char* y,char* M,char* d,char* h,char* m,char* s){
-            char* zero;
-            *(zero)='0';
+        Time():yy(""),MM(""),dd(""),hh(""),mm(""),ss(""){};
+        void set(char* y,char* M,char* d,char* h,char* m,char* s){
             if(strlen(y)<=1){
-                strcpy(yy,strcat(zero,y));
+                char zero[5]="0";
+                strcat(zero,y);
+                strcpy(yy,zero);
             }
             else{
                 strcpy(yy,y);
             }
             if(strlen(M)<=1){
-                strcpy(MM,strcat(zero,M));
+                char zero[3]="0";
+                strcat(zero,M);
+                strcpy(MM,zero);
             }
             else{
                 strcpy(MM,M);
             }
             if(strlen(d)<=1){
-                strcpy(dd,strcat(zero,d));
+                char zero[3]="0";
+                strcat(zero,d);
+                strcpy(dd,zero);
             }
             else{
                 strcpy(dd,d);
             }
             if(strlen(h)<=1){
-                strcpy(hh,strcat(zero,h));
+                char zero[3]="0";
+                strcat(zero,h);
+                strcpy(hh,zero);
             }
             else{
                 strcpy(hh,h);
             }
             if(strlen(m)<=1){
-                strcpy(mm,strcat(zero,m));
+                char zero[3]="0";
+                strcat(zero,m);
+                strcpy(mm,zero);
             }
             else{
                 strcpy(mm,m);
             }
             if(strlen(s)<=1){
-                strcpy(ss,strcat(zero,s));
+                char zero[3]="0";
+                strcat(zero,s);
+                strcpy(ss,zero);
             }
             else{
                 strcpy(ss,s);
             }
+            cout<<"end";
         };
         bool operator==(const Time& t);
         bool operator!=(const Time& t);
@@ -57,20 +68,35 @@ class Time{
         bool operator<=(const Time& t);
         bool operator>=(const Time& t);
         friend ostream& operator<<(ostream& out,Time& tb){
-            return out<<tb.yy<<"/"<<tb.MM<<" "<<tb.dd<<":"<<tb.hh<<":"<<tb.mm<<":"<<tb.ss<<endl;
+            out<<tb.yy<<"/"<<tb.MM<<" "<<tb.dd<<":"<<tb.hh<<":"<<tb.mm<<":"<<tb.ss<<endl;
+            return out;
         }
 };
 
 class TimeTable{
     private:
         Time _start,_end;
-        char* _name;
         bool _isapproval;
     public:
-        TimeTable(){};
-        TimeTable(char* n1,char* y1,char* m1,char* a1,char* b1,char* c1,char* d1,char* y2,char* m2,char* a2,char* b2,char* c2,char* d2):_name(n1),_start(y1,m1,a1,b1,c1,d1),_end(y2,m2,a2,b2,c2,d2){
+        char _name[20];
+        TimeTable():_name(""),_isapproval(false){};
+        TimeTable(char* n1){
+            strcmp(_name,n1);
             _isapproval=false;
         };
+        void setstart(){
+            char y1[5] ="",M1[3] ="",d1[3] ="",h1[3] ="",m1[3] ="",s1[3] ="";
+            system("clear");  
+            cout<<"输入起始时间(yyyy/mm/dd hh:mm:ss): ";
+            cin>>y1;cin>>M1;cin>>d1;cin>>h1;cin>>m1;cin>>s1;
+            _start.set(y1,M1,d1,h1,m1,s1);
+        }
+        void setend(){
+            char y1[5] ="",M1[3] ="",d1[3] ="",h1[3] ="",m1[3] ="",s1[3] =""; 
+            cout<<"输入结束时间(yyyy/mm/dd hh:mm:ss): ";
+            cin>>y1;cin>>M1;cin>>d1;cin>>h1;cin>>m1;cin>>s1;
+            _end.set(y1,M1,d1,h1,m1,s1);
+        }
         bool intersect(const TimeTable&  tb);
         bool operator<=(const TimeTable& tb);
         void changeapproval();
@@ -81,7 +107,6 @@ class TimeTable{
                 printRed("Waiting for approval");
             return out<<"Name:"<<tb._name<<"\nTime:"<<tb._start<<"   ->"<<tb._end<<endl;
         }
-        inline char* get_name() const { return _name; }
 };
 
 #endif

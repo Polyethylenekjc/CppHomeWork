@@ -40,8 +40,8 @@ bool FileOperate<T,U>::savetofile(T& elem){
             return true;
             obin.close();
         }
-        U temp=iter.getptr()->data;
-        obin.write((char*)(&temp),sizeof(U));
+        U* temp=iter._ptr->pointer();
+        obin.write(reinterpret_cast<char*>(temp),sizeof(U));
         if(iter==elem.end())
             break;
     }
@@ -59,7 +59,7 @@ bool FileOperate<T,U>::readfromfile(T & elem){
     }
     U temp;
     while(!ibin.eof()){ 
-        ibin.read((char*)(&temp),sizeof(U));
+        ibin.read(reinterpret_cast<char*>(&temp),sizeof(U));
         elem.push_back(temp);
         if(ibin.eof()){
             elem.erase(elem.end());
@@ -73,11 +73,12 @@ bool FileOperate<T,U>::readfromfile(T & elem){
 template<typename T,typename U>
 void FileOperate<T,U>::set_dir(char* dir){
     strcpy(_dir,dir);
-    ofstream temp(_dir);
+    ifstream temp(_dir);
     char key[]="touch ";
     if(!temp.is_open())
         system(strcpy(key,_dir));
     this->isinit=true;
+    temp.close();
 }
 
 #endif

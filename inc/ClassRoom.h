@@ -6,7 +6,7 @@
 using namespace std;
 
 struct Attribute{
-    char map[20],key[20];
+    char map[20]="",key[20]="";
     friend ostream& operator<<(ostream& out,Attribute& att){
         return out<<"属性名:"<<att.map<<"\n属性值:"<<att.key;
     }
@@ -19,11 +19,11 @@ class ClassRommBase{
         int idxAttribute=0,idxBooklist=0;
     public:
         char _name[20];
-        ClassRommBase(){};
+        ClassRommBase():_name(""){};
         void addAttribute(char *k1,char *k2);
         void eraseAttribute(char *k1);
         void eraseBooklist(char* k1);
-        void addBooklist(char* n1,char* y1,char* m1,char* a1,char* b1,char* c1,char* d1,char* y2,char* m2,char* a2,char* b2,char* c2,char* d2);
+        void addBooklist(char* name);
         void showBooklist();
         void ShowAttribute();
         void adminApproval(User userlogin);

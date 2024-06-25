@@ -28,9 +28,9 @@ class MyUi{
             while(!_islogin){
                 system("clear");
                 cout<<"------------------Login Menu------------------\n";
-                cout<<"-------------------1 注册---------------------\n";
-                cout<<"-------------------2 登录---------------------\n";
-                cout<<"-------------------0 退出---------------------\n";
+                cout<<"                   1 注册                     \n";
+                cout<<"                   2 登录                     \n";
+                cout<<"                   0 退出                     \n";
                 int opt;
                 cin>>opt;
                 switch(opt){
@@ -161,7 +161,7 @@ class MyUi{
                 cin>>opt;
                 switch(opt){
                     case 0:return;break;
-                    case 1:cout<<"输入教室名";cin>>_classroom.getptr()->data._name;break;
+                    case 1:cout<<"输入教室名";cin>>_classroom.getptr()->data._name;printGreen("Success");break;
                     case 2:{
                         int i;char key1[20],key2[20];
                         cout<<"教室属性数量:";
@@ -173,9 +173,10 @@ class MyUi{
                             cin>>key2;
                             _classroom.getptr()->data.addAttribute(key1,key2);
                             cout<<endl;
+                            printGreen("Success");
                         }break;
                     }
-                    case 3:cout<<"输入要删除的属性名:";char key[20];cin>>key;_classroom.getptr()->data.eraseAttribute(key);break;
+                    case 3:cout<<"输入要删除的属性名:";char key[20];cin>>key;_classroom.getptr()->data.eraseAttribute(key);printGreen("Success");break;
                     default: printRed("Error!Please enter right idx");
                 }
                 sleep(2);
@@ -185,15 +186,18 @@ class MyUi{
             while(1){
                 system("clear");
                 cout<<"----------------Classroom Menu----------------\n";
-                cout<<"------------------1 新建教室------------------\n";
-                cout<<"------------------2 选定教室------------------\n";
-                cout<<"------------------3 编辑教室------------------\n";
-                cout<<"------------------4 删除教室------------------\n";
-                cout<<"------------------5 管理员审核----------------\n";
-                cout<<"------------------6 显示所有教室--------------\n";
-                cout<<"------------------7 从文件读取教室列表--------\n";
-                cout<<"------------------0 退出----------------------\n";
-                cout<<"------------------输入功能序号:---------------\n";
+                cout<<"                 1  新建教室                  \n";
+                cout<<"                 2  选定教室                  \n";
+                cout<<"                 3  编辑教室                  \n";
+                cout<<"                 4  删除教室                  \n";
+                cout<<"                 5  管理员审核                \n";
+                cout<<"                 6  预约教室                  \n";
+                cout<<"                 7  输出预约                  \n";
+                cout<<"                 8  显示所有教室              \n";
+                cout<<"                 9  从文件读取                \n";
+                cout<<"                 10 保存到文件                \n";
+                cout<<"                 0  退出                      \n";
+                cout<<"                 输入功能序号:                \n";
                 int opt;
                 cin>>opt;
                 switch(opt){
@@ -214,8 +218,17 @@ class MyUi{
                         else
                             printRed("Error!No classroom selected");
                     }break;
-                    case 6:system("clear");_classlist.show();sleep(5);break;
-                    case 7:readclasslistfromfile();break;
+                    case 6:{
+                        if(_isselect){
+                            _classroom.getptr()->data.addBooklist(_user._username);
+                        }
+                        else
+                            printRed("Error!No classroom selected");
+                    }break;
+                    case 7:system("clear");_classroom._ptr->data.showBooklist();break;
+                    case 8:system("clear");_classlist.show();sleep(2);break;
+                    case 9:readclasslistfromfile();break;
+                    case 10:saveclasslisttofile();break;
                     default: printRed("Error!Please enter right idx");
                 }
                 sleep(2);
@@ -225,11 +238,19 @@ class MyUi{
             char dd[]="/mnt/e/Code/Homework/data/";
             char *dir=strcat(dd,_user._username);
             _f_classlist.set_dir(dir);
-            _f_classlist.savetofile(_classlist);
+            _f_classlist.readfromfile(_classlist);
         } 
+        void saveclasslisttofile(){
+            char dd[]="/mnt/e/Code/Homework/data/";
+            char *dir=strcat(dd,_user._username);
+            _f_classlist.set_dir(dir);
+            _f_classlist.savetofile(_classlist);
+        }
         ~MyUi(){
             char dd[]="/mnt/e/Code/Homework/data/";
             char *dir=strcat(dd,_user._username);
+            _f_classlist.set_dir(dir);
+            _f_classlist.savetofile(_classlist);
             _f_userlist.savetofile(_userlist);
         }
 };
